@@ -49,14 +49,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         btnInserir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
                     if (etSaldoInicial.getText().toString().isEmpty()) {
-                        Toast.makeText(MainActivity.this, "Informe o saldo inicial!", Toast.LENGTH_SHORT).show();
-                        return;
+                        throw new Exception("Informe o saldo inicial!");
                     }
                     if (etValorOp.getText().toString().isEmpty()) {
                         throw new Exception("Informe o valor da operação!");
@@ -72,11 +70,11 @@ public class MainActivity extends AppCompatActivity {
                     float valorOperacao = Float.parseFloat(etValorOp.getText().toString());
                     String rotulo = etRotuloOp.getText().toString();
                     String tipoOperacao = rdBtnSelecionado.getText().toString();
-
-                    Log.d("DADOS", "Saldo Inicial: " + saldoInicial);
-                    Log.d("DADOS", "Valor Operação: " + valorOperacao);
-                    Log.d("DADOS", "Rótulo: " + rotulo);
-                    Log.d("DADOS", "Tipo: " + tipoOperacao);
+//
+//                    Log.d("DADOS", "Saldo Inicial: " + saldoInicial);
+//                    Log.d("DADOS", "Valor Operação: " + valorOperacao);
+//                    Log.d("DADOS", "Rótulo: " + rotulo);
+//                    Log.d("DADOS", "Tipo: " + tipoOperacao);
 
                     if (primeiraOperacao) {
                         saldoAtual = saldoInicial;
@@ -86,11 +84,11 @@ public class MainActivity extends AppCompatActivity {
                     if(tipoOperacao.equals("Débito")) {
                         saldoAtual -= valorOperacao;
                         totalDebitos += valorOperacao;
-                        Log.d("CALCULO", "Débito aplicado. Novo saldo: " + saldoAtual);
+//                        Log.d("CALCULO", "Débito aplicado. Novo saldo: " + saldoAtual);
                     } else if (tipoOperacao.equals("Crédito")) {
                         saldoAtual += valorOperacao;
                         totalCreditos += valorOperacao;
-                        Log.d("CALCULO", "Cŕedito aplicado. Novo saldo: " + saldoAtual);
+//                        Log.d("CALCULO", "Cŕedito aplicado. Novo saldo: " + saldoAtual);
                     }
 
                     tvSaldoAtual.setText("Saldo atual: R$ " + String.format("%.2f", saldoAtual));
@@ -110,11 +108,11 @@ public class MainActivity extends AppCompatActivity {
                     etRotuloOp.setText("");
                     radioGroup.clearCheck();
                 } catch (NumberFormatException e) {
-                    Toast.makeText(MainActivity.this, "Valor inválido!", Toast.LENGTH_SHORT).show();
-                    Log.e("ERRO", "NumberFormatException: " + e.getMessage());
+                    Toast.makeText(MainActivity.this, "Erro: Valor inválido!", Toast.LENGTH_SHORT).show();
+//                    Log.e("ERRO", "NumberFormatException: " + e.getMessage());
                 } catch (Exception e) {
                     Toast.makeText(MainActivity.this, "Erro: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                    Log.e("ERRO", "Exception: " + e.getMessage());
+//                    Log.e("ERRO", "Exception: " + e.getMessage());
                 }
             }
         });

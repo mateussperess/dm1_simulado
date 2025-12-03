@@ -8,7 +8,7 @@
     tools:context=".MainActivity2">
 
     <TextView
-        android:id="@+id/etTotalDebitos"
+        android:id="@+id/txtTotalDebitos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -16,10 +16,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTotalCreditos" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTotalCreditos" />
 
     <TextView
-        android:id="@+id/etTotalCreditos"
+        android:id="@+id/txtTotalCreditos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -50,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTotalDebitos"
+        app:layout_constraintTop_toBottomOf="@+id/txtTotalDebitos"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
