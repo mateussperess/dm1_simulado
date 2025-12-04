@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         inicializarComponentes();
+        limparCamposAoClicar();
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -135,5 +136,28 @@ public class MainActivity extends AppCompatActivity {
         tvSaldoAtual = findViewById(R.id.tvSaldoAtual);
         tvUltimaOp = findViewById(R.id.tvUltimaOp);
         btnInserir = findViewById(R.id.btnInserir);
+    }
+
+    private void limparCamposAoClicar() {
+        etSaldoInicial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etSaldoInicial.setText("");
+            }
+        });
+
+        etValorOp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etValorOp.setText("");
+            }
+        });
+
+        etRotuloOp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etRotuloOp.setText("");
+            }
+        });
     }
 }
